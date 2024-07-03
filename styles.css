@@ -1,0 +1,527 @@
+/* -----RESETEO----- */
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e2eaff;
+    color: #101632dd;
+}
+
+div, ul, nav, header, footer, a, li, label {
+    margin: 0;
+    padding: 0;
+}
+
+/* -----HEADER SECTION----- */
+
+header {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    font-size: 20px;
+    color: #48e;
+}
+
+.header__open-nav-button {
+    color: #48e;
+    font-size: 3rem;
+    font-weight: 600px;
+    position: absolute;
+    right: 10px;
+}
+
+.header__checkbox {
+    display: none;
+}
+
+.header__nav {
+    display: none;
+    background-color: #fff;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    z-index: -1;
+}
+
+
+.header__nav-list{
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    margin: auto;
+    justify-content: space-evenly;
+}
+
+.header__checkbox:checked ~ .header__nav {
+    display: flex;
+
+}
+
+.header__logo {
+    min-width: 70%;
+    width: 70px;
+    margin: 10px 20px;
+    overflow: hidden;
+    border-radius: 40px 30px;
+}
+
+.header__nav-item {
+    list-style: none;
+}
+
+.header__nav-item a {
+    color: inherit;
+    text-decoration: none;
+}
+.header__nav-item a:is(:hover,:active) {
+    text-decoration: underline;
+}
+
+/* ----- HEADER QUERIES----- */
+
+.header {
+    padding: 20px 0px;
+    animation: header-movement both;
+    animation-timeline: scroll();
+    position: sticky;
+    top: 0;
+    animation-range: 10px 100px;
+}
+
+@media screen and (min-width: 600px) {
+    .header {
+        padding: 20px 0px;
+        animation: header-movement both;
+        animation-timeline: scroll();
+        position: sticky;
+        top: 0;
+    }
+
+    .header__nav{
+        display: block;
+        position: static;
+        height: auto;
+        width: auto;
+        justify-content: space-between;
+        background-color: initial;
+    }
+    
+    .header__nav-list {
+        flex-direction: row;
+        height: auto;
+        width: auto;
+        gap: 20px;
+        margin-right: 40px;
+    }
+
+    .header__open-nav-button{
+        display: none;
+    }
+}
+
+
+/* ----- HEADER ENDS----- */
+
+/* ----- PROFILE SECTIONS----- */
+
+
+#profile{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.profile {
+    container-name: profile;
+    container-type: inline-size;
+    display: flex;
+    flex-flow: wrap;
+    justify-items: center;
+    animation: aparecer 2.4s -.6s both;
+}
+
+.profile__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    max-width: 900px;
+    
+}
+
+.profile__data-container {
+    max-width: 1200px;
+    max-height: 1200px;
+    padding: 12px;
+}
+
+.profile__img-container {
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.profile__img{
+    max-width: 900px;
+    max-height: 900px;
+    width: 420x;
+    height: 400px;
+}
+
+h1 {
+    color: #26a
+}
+
+.profile__skills-container h2{
+    color: #26a;
+}
+
+.profile__skills-container h4{
+    color: #2266aa85;
+    font-size: 20PX;
+}
+
+.profile__skills {
+list-style: none;
+display: flex;
+margin: 10px;
+max-width: 600px;
+margin-left: 0;
+align-items: center;
+}
+
+.load-bar {
+    border: 2px solid #48e;
+    border-radius: 8px;
+    color: #fff;
+    padding: 2px;
+    font-size: 12px;
+    width: 80%;
+    margin: 4px;
+    margin-left: 0;
+}
+
+.profile__skill-name {
+    color: #48e;
+}
+
+.load-bar__bar {
+    background-color: #48e;
+    border-radius: 4px;
+    padding: 4px 6px;
+}
+
+.bar--90{
+    width: 90%;
+}
+
+.bar--85{
+    width: 85%;
+}
+
+.profile__skills2 {
+    list-style: none;
+    display: flex;
+    margin: 12px;
+    max-width: 600px;
+    margin-left: 0;
+    align-items: center;
+    }
+    
+.load-bar2 {
+        border: 2px solid #b3091a86;
+        border-radius: 8px;
+        color: #fff;
+        padding: 2px;
+        font-size: 8px;
+        width: 60%;
+        margin: 2px;
+        margin-left: 0;
+    }
+    
+.load-bar__bar2 {
+        background-color: #e50d0d8a;
+        border-radius: 4px;
+        padding: 4px 6px;
+    }
+    
+.bar--70{
+        width: 70%;
+    }
+    
+.bar--85{
+        width: 85%;
+    }
+
+    .bar--75{
+        width: 75%;
+    }
+    
+.bar--80{
+        width: 80%;
+    }
+
+    /* -------------PROFILE QUERIES--------------- */
+
+
+@container profile (min-width:720px){
+    .profile__wrapper {
+        flex-direction: row;
+        padding: 20px;
+        background-color: transparent;
+        height: 90vh;
+        margin: auto;
+    }
+    
+    .profile__data-container {
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        border-radius: 0px 25px 25px 0px;
+        box-shadow: 0px 0px 9px #0002;
+    }
+
+    h1 {
+        margin-top: 0;
+        font-size: 4rem;
+        text-wrap: balance;
+    }
+
+    .profile__data {
+        max-width: 620px;
+    }
+    
+    .profile__img-container {
+        max-height: initial;
+        border-radius: 25px 0 0 25px;
+    }
+
+    .profile__img {
+        height: 100%;
+        object-fit: cover;
+        width: 620px;
+        background-color: #fff;
+    }
+
+}
+
+/*----------- PROFILE ENDS -----------*/
+
+
+
+
+/*----------- PORTFOLIO SECTIONS -----------*/
+.portfolio {
+    background-color: #18233f;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    container-name: portfolio;
+    container-type: inline-size ;
+    justify-content: space-evenly;
+}
+
+.portfolio__title {
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+
+.portfolio__project-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 1300px;
+    margin: auto;
+    width: 100%;
+    gap: 12px;
+    padding: 12px;
+    min-height: 80vh;
+}
+
+.portfolio__project {
+    background-image: linear-gradient(#000, #0009), url("https://previews.123rf.com/images/maximusnd/maximusnd2309/maximusnd230900333/213147039-programaci%C3%B3n-de-sitios-web-c%C3%B3digo-it-business.jpg");
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    place-content: center;
+    border-radius: 8px;
+    animation: aparecer both;
+    animation-timeline: view();
+    animation-range: cover 5% cover 40%;
+}
+
+.portfolio__project:hover {
+    opacity: 
+    0.74;
+    outline: 2px solid #fff6;
+}
+
+
+/*----------- PORTFOLIO QUERIES -----------*/
+
+@container portfolio (min-width:900px){
+    .portfolio__project-container {
+        grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+    }
+
+    .portfolio__project:first-child {
+        grid-column: span 2;
+    }
+    .portfolio__project:nth-child(6){
+        grid-column: span 2;
+    }
+}
+
+@container portfolio (min-width:1300px){
+    .portfolio__project-container {
+        grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    }
+
+    .portfolio__project:first-child {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    .portfolio__project:nth-child(6){
+        grid-column: span 4;
+    }
+}
+
+
+/*----------- PORTFOLIO ENDS -----------*/
+
+/*----------- CONTACT SECTION -----------*/
+
+.form {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    container-name: form;
+    container-type: inline-size;
+    animation: aparecer both;
+    animation-timeline: view();
+    animation-range: cover 0% contain 40%;
+}
+
+.form__form {
+    padding: 12px;
+    max-width: 600px;
+    width: 100%;
+    display: grid;
+    margin-bottom: 4px;
+}
+
+.form__input-container :is(input,textarea) {
+    width: 100%;
+    padding: 9px;
+    font-size: 16px;
+    margin: 4px;
+    border: none;
+    box-shadow: 2px 2px 4px #0003;
+    background-color: #fffd;
+}
+
+.form__input-container textarea {
+    resize:none;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+.form__input-container input[type="submit"] {
+    padding: 12px;
+    background-color: #48e;
+    color: #fff;
+}
+
+.form_title {
+    font-size: 2.4rem;
+}
+/*----------- CONTACT QUERIES -----------*/
+
+@container form (min-width:600px){
+    .form__form {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "name lastname"
+    "email email"
+    "message message"
+    "button button";
+    gap: 12px;
+    background-image: linear-gradient(#18233f06, #18233f33);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 40px #0006;
+    }
+
+    .form__input-container:first-child {
+        grid-area: name;
+    }
+
+    .form__input-container:nth-child(2) {
+        grid-area: lastname;
+    }
+
+    .form__input-container:nth-child(3) {
+        grid-area: email;
+    }
+
+    .form__input-container:nth-child(4) {
+        grid-area: message;
+    }
+
+    .form__input-container:nth-child(5) {
+        grid-area: button;
+    }
+
+    .form__input-container :is(input,textarea) {
+    box-shadow: none;
+    border-radius: 4px;
+    }
+}
+
+/*----------- CONTACT ENDS -----------*/
+
+/*----------- FOOTER SECTION -----------*/
+
+footer {
+    padding: 60px;
+    text-align: center;
+    background-color: #18233f;
+    color: #fffd;
+    font-size: 22px;
+}
+
+/* -------------ANIMACIONES ------------- */
+
+@keyframes header-movement {
+    from{
+    padding: 20px 0;
+    background-color: #fff;
+}
+
+    to {
+        padding: 0;
+        background-color: #10163266;   
+        color: #fff;
+    }
+}
+
+@keyframes aparecer {
+    from{
+    opacity: 0;
+}
+
+    to {
+        opacity: 1;
+    }
+}
